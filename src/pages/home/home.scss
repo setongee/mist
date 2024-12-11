@@ -1,0 +1,310 @@
+.home{
+
+    .socials{
+        a{
+            color: #131313;
+
+            &:hover{
+                color: #00B44E;
+            }
+        }
+    }
+
+    .landing__area{
+        
+        display: flex;
+        position: relative;
+        // flex-direction: column;
+        // height: calc(100vh - 160px);
+        justify-content: space-between;
+        margin: 80px 0;
+        margin-top: 50px;
+
+        .scroll{
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-top: 50px;
+
+            .icon{
+                font-size: 15px;
+                margin-top: 3px;
+            }
+        }
+
+        .logosneek{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            bottom: -100px;
+            left: 35%;
+            animation: rotate 20s infinite linear;
+            z-index: 4;
+            display: none;
+
+            img{
+                width: 100%;
+            }
+        }
+
+        @keyframes rotate {
+
+            to{
+                rotate: 360deg;
+            }
+            
+        }
+
+        .text__part{
+
+            width: 700px;
+            margin-top: 30px;
+
+
+            h1{
+                font-size: 60px;
+                line-height: 70px;
+                margin-top: 20px;
+                letter-spacing: -1.3px;
+            }
+
+            p{
+                margin-top: 50px;
+                margin-bottom: 40px;
+                width: 70%;
+                line-height: 28px;
+                font-size: 17px;
+                color: #555;
+            }
+
+            span{
+
+                background: #1C3F3A;
+                background: -moz-linear-gradient(90deg, #1C3F3A 0%, #00B44E 100%);
+                background: -webkit-linear-gradient(90deg, #1C3F3A 0%, #00B44E 100%);
+                background: linear-gradient(90deg, #1C3F3A 0%, #00B44E 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1C3F3A",endColorstr="#00B44E",GradientType=1);
+                
+                color: #fff;
+                line-height: 82px;
+
+            }
+        }
+
+        .stoPic{
+            width: 40%;
+            overflow: hidden;
+            margin-top: -30px;
+            
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+    .news-flat{
+
+        margin-top: 50px;
+        
+    }
+
+}
+
+.commissionerCorner{
+
+    margin-bottom: 70px;
+
+    .corner{
+
+        justify-content: space-between;
+        align-items: center;
+
+        .photoChance{
+            width: 600px;
+            height: 550px;
+            position: relative;
+
+            .boxChance{
+                width: 100%;
+                height: 450px;
+                background-color: #F9F9FB;
+            }
+
+            .photoCom{
+                height: 470px;
+                width: 450px;
+                overflow: hidden;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .speech{
+
+            width: 45%;
+
+            .who{
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: 11px;
+                font-weight: 600;
+                margin-bottom: 30px;
+                color: #444;
+
+                span{
+                    color: #00B44E;
+                    font-weight: 700;
+                }
+            }
+
+            .speech__title{
+                font-size: 40px;
+                width: 100%;
+                font-weight: 600;
+                line-height: 50px;
+            }
+
+            .speech__desc{
+                margin: 30px 0;
+                width: 70%;
+                color: #555;
+                line-height: 26px;
+            }
+
+            .buttonGrp{
+                margin-top: 50px;
+                gap: 15px;
+            }
+        }
+    }
+}
+
+.service{
+
+    background-color: #fff;
+    margin-top: 100px;
+
+    .topic__hand{
+        margin: 0 auto;
+        margin-bottom: 70px;
+        font-size: 35px;
+        width: 50%;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 0px;
+    }
+
+    .cards{
+        overflow: hidden;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+    .card__blaze{
+
+        // width: 370px;
+        background-color: #F9F9FB;
+        padding: 40px;
+        min-width: 430px;
+
+        .text__container{
+
+            // margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            .card__title{
+                font-size: 21px;
+                line-height: 31px;
+                font-weight: 700;
+                width: 80%;
+                height: 90px;
+                text-decoration: underline;
+            }
+
+            p{
+                line-height: 24px;
+                width: 100%;
+                font-size: 15px;
+                font-weight: 400;
+                color: #555;
+            }
+
+            .checklist{
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 10px;
+                margin-bottom: 15px;
+
+                .itemInfo{
+                    display: flex;
+                    gap: 15px;
+                    font-size: 15px;
+                    font-weight: 500;
+
+                    :first-child{
+                        color: #00B44E;
+                    }
+                }
+            }
+
+
+        }
+
+        .photo__container{
+            width: 100%;
+            overflow: hidden;
+            height: 380px;
+            border-radius: 5px;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                // object-position: top;
+            }
+        }
+    }
+}
+
+.programmes{
+
+    margin: 50px 0;
+
+    .programme__parent{
+
+        overflow-x: auto;
+        scrollbar-width: none;
+
+        .programme__item{
+            min-width: 800px;
+            height: 400px;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+
+            img{
+                width: 100%;
+            }
+            
+        }
+
+    }
+}

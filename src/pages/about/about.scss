@@ -1,0 +1,209 @@
+.about{
+    margin-top: 170px;
+    padding-top: 50px;
+
+    .active-scroll-spy {
+        color: green !important;
+    }
+
+    .navigateMenu{
+
+        width: 100%;
+        position: fixed;
+        background-color: #fff;
+        top: 122px;
+        padding: 20px 0;
+        border-bottom: 1px solid #eee;
+        z-index: 98;
+
+        .spy__links{
+
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            
+            p,a{
+
+                text-transform: uppercase;
+                font-size: 11px;
+                letter-spacing: 2px;
+                font-weight: 500;
+                border-right: 1px solid #bdbdbd;
+                padding-right: 20px;
+                color: #131313;
+
+                &:last-child{
+                    border: none;
+                    padding-right: 0;
+                }
+
+            }
+
+        }
+
+    }
+
+    section{
+        display: flex;
+    }
+
+    #introduction{
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .multi{
+
+        flex-direction: column;
+
+    }
+
+    .intro{
+        font-size: 45px;
+        width: 70%;
+        font-weight: 600;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .pinna{
+        letter-spacing: 5px;
+        font-size: 11px;
+        margin: 70px 0;
+        color: #999;
+    }
+
+    .brief{
+
+        width: 45%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .tab{
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1C3F3A;
+            font-size: 21px;
+        }
+
+        p{
+            font-size: 18px;
+            line-height: 30px;
+            text-align: center;
+        }
+    }
+
+    .bubble{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 100px 70px;
+        gap: 20px;
+        width: 50%;
+        border-right: 1px solid #eeeeee48;
+
+        .headUp{
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: underline;
+            color: #fff;
+        }
+
+        p{
+            font-size: 21px;
+            line-height: 32px;
+            font-weight: 500;
+        }
+    }
+
+    .tube{
+        // background-color: #EBE8D8;
+        width: 80%;
+    }
+
+    #mission{
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 100px;
+        background-color: #1C3F3A;
+        color: #fff;
+    }
+
+    #agency{
+
+        margin-bottom: 50px;
+
+        h1{
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1C3F3A;
+            font-size: 14px;
+        }
+    }
+
+    #responsibility{
+
+        margin-bottom: 100px;
+
+        .resp__body{
+       
+            background-color: #eff4f3;
+            padding: 50px;
+
+            .summary{
+                width: 50%;
+                font-size: 18px;
+                line-height: 28px;
+                font-weight: 500;
+            }
+
+            .body__list{
+
+                margin-top: 40px;
+
+                ol{
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    width: 80%;
+                    margin-left: 30px;
+
+                    li{
+                        list-style-type:decimal-leading-zero;
+                        line-height: 26px;
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
+.titlePin{
+    font-size: 40px;
+    text-align: center;
+    font-weight: 600;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    width: 50%;
+    text-decoration: underline;
+    line-height: 55px;
+}
+
+.iconHolder{
+    padding: 20px;
+    background-color: #ebf1ec;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
