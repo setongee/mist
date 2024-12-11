@@ -65,11 +65,13 @@
 // Image Components
 
 .image__logo{
-    width: max-content;
+    width: 150px;
     height: 50px;
+    overflow: hidden;
 }
 
 .image__item{
+
     img{
         width: 100%;
         height: 100%;

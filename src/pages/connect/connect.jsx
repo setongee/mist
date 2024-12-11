@@ -17,13 +17,13 @@ export default function Connect() {
                     <div className="head">
                         
                         <h1> <span>Reach Out to Us</span> for Support, Inquiries, or Feedback Today! </h1>
-                        <div className='span' >Fill in the form or drop an email 📬</div>
+                        <div className='span' >Send us an email today📬 or call in</div>
 
                     </div>
 
                     <div className="connect__info">
 
-                        <p> <Mail color='green'/> health@lagosstate.gov.ng </p>
+                        <p> <Mail color='green'/> mist@lagosstate.gov.ng </p>
                         <p> <Phone color='green'/> +2349090006463 or 112 </p>
 
                         <div>

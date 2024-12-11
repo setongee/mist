@@ -13,13 +13,12 @@ import Footer from '../../components/footer/footerArea'
 export default function News_Events() {
 
     let navigate = useNavigate();
+    
     const {page} = useParams();
     const [size, setSize] = useState( { length : 0, pageCount : 0 } );
     const [newsCounter, setNewsCounter] = useState(0);
     
     const topic = "Science and Technology "
-
-    console.log(topic)
     
     const newsData = useQuery({
 

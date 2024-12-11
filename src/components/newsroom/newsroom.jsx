@@ -1,9 +1,31 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import './newsroom.scss'
 import Button from '../button/Button'
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'iconoir-react'
+import { useQuery } from '@tanstack/react-query'
+import { getAllNews } from '../../api/core/news.req'
+import { convertToTitleCase, formatDate2 } from '../../middleware/middleware'
 
 export default function Newsroom({type}) {
+    
+    const [news, setNews] = useState([])
+    const topic = "Science and Technology "
+    const {data, isLoading} = useQuery({
+
+        queryKey: ["newsroom", 1, topic],
+        queryFn: () => getAllNews(0, topic)
+
+    })
+
+    useEffect(() => {
+        
+       const filteredArr = data?.data.filter( (res, index) => {
+        return index < 5
+       } )
+
+       setNews(filteredArr);
+
+    }, [isLoading]);
 
   return (
 
@@ -28,61 +50,29 @@ export default function Newsroom({type}) {
 
         <div className="news flex" id = {type}>
 
-            <a href='/newsroom/381639814' className="news__item">
+            {
+                news?.length ? 
+                news?.map( e => (
 
-                <div className="photo">
-                    <img src="https://lagosministryofhealth.org/wp-content/uploads/2024/08/IMG-20240821-WA0017.jpg" alt="images" />
-                </div>
+                    <a href={`/newsroom/view/${e._id}`}
+                     className="news__item" key = {e._id}>
 
-                <div className="content__text font__16 font__weight__600">
+                        <div className="photo">
+                            <img src={e.photo} alt="images" />
+                        </div>
 
-                <p className="published">Published 4 Days ago</p>
+                        <div className="content__text font__16 font__weight__600">
 
-                <p>Lagos State Resumes “Alaafia Eko” Medical Outreach Amidst Residents’ Jubilation</p>
-                </div>
+                        <p className="published"> { formatDate2( e.date ) } </p>
 
-            </a>
+                        <p> { convertToTitleCase(e.title) } </p>
 
-            <a href='/newsroom/381639814' className="news__item">
+                        </div>
 
-                <div className="photo"><img src="https://lagosministryofhealth.org/wp-content/uploads/2024/08/IMG-20240820-WA0016.jpg" alt="images" /></div>
-                <div className="content__text font__weight__600">
-                    <p className="published">Published 4 Days ago</p>
-                    <p>Global Fund Boosts Lagos Healthcare With Five State-Of-The-Art Micu Ambulances</p>
-                </div>
+                    </a>
 
-            </a>
-
-            <a href='/newsroom/381639814' className="news__item">
-
-                <div className="photo"><img src="https://lagosministryofhealth.org/wp-content/uploads/2024/08/IMG-20240818-WA0014.jpg" alt="images" /></div>
-                <div className="content__text font__weight__600">
-                <p className="published">Published 4 Days ago</p>
-                <p>Lagos Free Medical Outreach “Alaafia Eko” Returns</p>
-                
-                </div>
-
-            </a>
-
-            <a href='/newsroom/381639814' className="news__item">
-
-                <div className="photo"><img src="https://lagosministryofhealth.org/wp-content/uploads/2024/08/IMG-20240815-WA0003.jpg" alt="images" /></div>
-                <div className="content__text font__weight__600">
-                <p className="published">Published 4 Days ago</p>
-                <p>Lagos Ship Sets Sail, Promises Enhanced Patient Care And Efficiency.</p>
-                </div>
-
-            </a>
-
-            <a href='/newsroom/381639814' className="news__item">
-
-                <div className="photo"><img src="https://lagosministryofhealth.org/wp-content/uploads/2024/08/IMG-20240818-WA0014.jpg" alt="images" /></div>
-                <div className="content__text font__weight__600">
-                <p className="published">Published 4 Days ago</p>
-                <p>Lagos Free Medical Outreach “Alaafia Eko” Returns</p>
-                </div>
-
-            </a>
+                ) ) : null
+            }
 
         </div>
 

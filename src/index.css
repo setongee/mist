@@ -30,7 +30,9 @@
 
 html{
   scroll-padding-top: 270px;
+  overflow-x: clip;
 }
+
 
 
 @media (prefers-color-scheme: light) {

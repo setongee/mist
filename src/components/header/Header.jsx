@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './header.scss'
 import Container from '../container/Container'
-import logo from '../../assets/logo/logo.svg'
+import logo from '../../assets/logo/mist__logo.svg'
 import Button from '../button/Button'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Menu, NavArrowDown } from 'iconoir-react'
