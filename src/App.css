@@ -55,3 +55,7 @@ body{
 .tip{
     color: #00ea65;
 }
+
+.plain{
+    z-index: 999;
+}

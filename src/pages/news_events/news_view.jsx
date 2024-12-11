@@ -7,6 +7,7 @@ import { useQuery } from '@tanstack/react-query'
 import { convertToTitleCase, formatDate, formatDate3, readingTime, sortArray, truncateText } from '../../middleware/middleware'
 import Loader from '../../components/loader/loader'
 import Container from '../../components/container/Container'
+import Footer from '../../components/footer/footerArea'
 
 export default function News_view() {
 
@@ -151,6 +152,8 @@ export default function News_view() {
             </div>
 
         </Container>
+
+        <Footer/>
 
     </div>
 

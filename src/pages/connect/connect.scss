@@ -175,3 +175,37 @@
         }
     }
 }
+
+@media(max-width : 600px) {
+
+    .contact{
+        margin: 50px auto;
+        margin-top: 160px;
+    }
+
+    .side1{
+        width: 100%;
+        .head{
+            h1{
+                font-size: 30px;
+                line-height: 40px;
+            }
+
+            
+        }
+
+        .connect__info{
+            gap: 0 !important;
+        }
+    }
+
+    .socials__time{
+        flex-direction: column;
+        margin-top: 0;
+        padding: 0;
+        border: none;
+        gap: 30px;
+        text-align: center;
+    }
+
+}

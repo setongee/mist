@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <div className="home">
 
-        <RrsNews/>
+        {/* <RrsNews/> */}
 
         <Container>
 
@@ -140,7 +140,7 @@ export default function Home() {
 
                     </motion.div> 
 
-                    <motion.div className="card__blaze" initial = { { y : "200px", opacity : 0 } } whileInView={{y : 0, opacity : 1}} transition={{ duration: 1, delay : 0.1, type: "easseInOut" }}>
+                    <motion.div className="card__blaze" initial = { { y : "200px", opacity : 0 } } whileInView={{y : 0, opacity : 1}} transition={{ duration: 1, delay : 0.2, type: "easseInOut" }}>
 
                         <div className="text__container"> 
                             
@@ -174,7 +174,7 @@ export default function Home() {
 
                     </motion.div> 
 
-                    <motion.div className="card__blaze" initial = { { y : "200px", opacity : 0 } } whileInView={{y : 0, opacity : 1}} transition={{ duration: 1, delay : 0.2, type: "easseInOut" }}>
+                    <motion.div className="card__blaze" initial = { { y : "200px", opacity : 0 } } whileInView={{y : 0, opacity : 1}} transition={{ duration: 1, delay : 0.4, type: "easseInOut" }}>
 
                         <div className="text__container"> 
                             

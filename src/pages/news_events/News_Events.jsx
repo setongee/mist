@@ -8,6 +8,7 @@ import { NavArrowLeft, NavArrowRight } from 'iconoir-react'
 import Loader from '../../components/loader/loader'
 import Container from '../../components/container/Container'
 import Pagination from '../../components/pagination/pagination'
+import Footer from '../../components/footer/footerArea'
 
 export default function News_Events() {
 
@@ -73,6 +74,8 @@ if (newsData.isLoading) return <div className="loaderPage"><Loader/></div>
             </div>
 
         </div>  
+
+        <Footer/>
 
     </div>
 

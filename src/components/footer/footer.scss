@@ -87,6 +87,8 @@
                 .links{
 
                     gap: 30px;
+                    flex-direction: row;
+                    flex-wrap: wrap;
 
                     a{
                         padding-bottom: 0px;

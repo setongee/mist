@@ -11,6 +11,17 @@ import agency from '../../assets/MDA/agency.svg'
 import dept from '../../assets/MDA/department.svg'
 import units from '../../assets/MDA/ministry.svg'
 
+//people
+import tunbosun from '../../assets/people/council_Olatubosun_Alake (1).png'
+import ibilola from '../../assets/people/ibilola.jpeg'
+import adewoju from '../../assets/people/ADEWOJU OLUSOLA OLAYINKA.jpeg'
+import faderera from '../../assets/people/mrs-lekan-rotimi.png'
+import gbemi from '../../assets/people/mrs-Bolarinwa.png'
+import tunji from '../../assets/people/tunji.jpeg'
+import yinka from '../../assets/people/SORUNGBE-TIWALADE-ADEYINKA.jpg'
+import idris from '../../assets/people/idris.jpeg'
+import Footer from '../../components/footer/footerArea';
+
 export default function About() {
   return (
     <div className="about">
@@ -367,13 +378,13 @@ export default function About() {
                             <div className="body__list">
 
                                 <ol>
-                                    <li>Initiate, formulate, execute, monitor and evaluate policies relating to Science & Information Communication Technology (ICT).</li>
-                                    <li>Automation and reengineering of government business processes & harmonisation of all existing ICT assets into a world class infrastructure.</li>
-                                    <li>Provision and maintenance of ICT services across Ministries, Departments &Agencies (MDAs).</li>
-                                    <li>Development of Science, Technology, Engineering & Mathematics (STEM) education as well as setting up ICT Centre for state schools.</li>
-                                    <li>STEM & ICT capacity building across all MDAs.</li>
-                                    <li>Enlarging the pool of scientific manpower, attracting young people to careers in science and retaining same.</li>
-                                    <li>Establishing globally competitive research facilities for the promotion of innovation, research & development in Science & ICT..</li>
+                                    <li> 01. Initiate, formulate, execute, monitor and evaluate policies relating to Science & Information Communication Technology (ICT).</li>
+                                    <li>02. Automation and reengineering of government business processes & harmonisation of all existing ICT assets into a world class infrastructure.</li>
+                                    <li>03. Provision and maintenance of ICT services across Ministries, Departments &Agencies (MDAs).</li>
+                                    <li>04. Development of Science, Technology, Engineering & Mathematics (STEM) education as well as setting up ICT Centre for state schools.</li>
+                                    <li>05. STEM & ICT capacity building across all MDAs.</li>
+                                    <li>06. Enlarging the pool of scientific manpower, attracting young people to careers in science and retaining same.</li>
+                                    <li>07. Establishing globally competitive research facilities for the promotion of innovation, research & development in Science & ICT..</li>
                                 </ol>
 
                             </div>
@@ -395,7 +406,7 @@ export default function About() {
                                 <a href='#' className="pic">
 
                                     <div className="pic__holder">
-                                        <img src="https://mist.lagosstate.gov.ng/wp-content/uploads/sites/54/2023/09/WhatsApp-Image-2024-01-10-at-14.41.27-780x470.jpeg" alt="" />
+                                        <img src={tunbosun} alt="" />
                                     </div>
 
                                     <div className="name__card">
@@ -408,7 +419,7 @@ export default function About() {
                                 <a href='#' className="pic">
 
                                     <div className="pic__holder">
-                                        <img src="https://mist.lagosstate.gov.ng/wp-content/uploads/sites/54/2019/08/Engr.Ibilola-Kasunmu-417x470.png" alt="" />
+                                        <img src={ibilola} alt="" />
                                     </div>
 
                                     <div className="name__card">
@@ -422,12 +433,12 @@ export default function About() {
                                 <a href='#' className="pic">
 
                                     <div className="pic__holder">
-                                        <img src="https://mist.lagosstate.gov.ng/wp-content/uploads/sites/54/2022/08/WhatsApp-Image-2022-08-22-at-12.26.32-PM.jpeg" alt="" />
+                                        <img src={adewoju} alt="" />
                                     </div>
 
                                     <div className="name__card">
                                         <span> Director, Finance& Accounts</span>
-                                        <p>ADEWOJU OLUSOLA OLAYINKA (MRS)</p>
+                                        <p>Adewoju Olusola Olayinka (Mrs)</p>
                                     </div>
 
                                 </a>
@@ -435,12 +446,12 @@ export default function About() {
                                 <a href='#' className="pic">
 
                                     <div className="pic__holder">
-                                        <img src="https://mist.lagosstate.gov.ng/wp-content/uploads/sites/54/2017/03/mrs-lekan-rotimi.png" alt="" />
+                                        <img src={faderera} alt="" />
                                     </div>
 
                                     <div className="name__card">
                                         <span>HEAD, SERVICE DELIVERY </span>
-                                        <p>Mrs. Faderera Ajibola LEKAN-ROTIMI </p>
+                                        <p>Mrs. Faderera Ajibola Lekan-Rotimi </p>
                                     </div>
 
                                 </a>
@@ -448,12 +459,12 @@ export default function About() {
                                 <a href='#' className="pic">
 
                                     <div className="pic__holder">
-                                        <img src="https://mist.lagosstate.gov.ng/wp-content/uploads/sites/54/2017/03/mrs-Bolarinwa.png" alt="" />
+                                        <img src={gbemi} alt="" />
                                     </div>
 
                                     <div className="name__card">
                                         <span>HEAD,STRATEGY & GOVERNANCE DEPARTMENT</span>
-                                        <p>MRS. GBEMISOLA KAYODE BOLARINWA</p>
+                                        <p>Mrs. Gbemisola Kayode Bolarinwa</p>
                                     </div>
 
                                 </a>
@@ -461,7 +472,7 @@ export default function About() {
                                 <a href='#' className="pic">
 
                                     <div className="pic__holder">
-                                        <img src="https://mist.lagosstate.gov.ng/wp-content/uploads/sites/54/2017/03/WhatsApp-Image-2024-01-10-at-14.42.32.jpeg" alt="" />
+                                        <img src={tunji} alt="" />
                                     </div>
 
                                     <div className="name__card">
@@ -474,12 +485,12 @@ export default function About() {
                                 <a href='#' className="pic">
 
                                     <div className="pic__holder">
-                                        <img src="https://mist.lagosstate.gov.ng/wp-content/uploads/sites/54/2016/02/SORUNGBE-TIWALADE-ADEYINKA.jpg" alt="" />
+                                        <img src={yinka} alt="" />
                                     </div>
 
                                     <div className="name__card">
                                         <span> Director Infrastructure </span>
-                                        <p>MR. SORUNGBE TIWALADE ADEYINKA</p>
+                                        <p>Mr. Sorungbe Tiwalade Adeyinka</p>
                                     </div>
 
                                 </a>
@@ -487,12 +498,12 @@ export default function About() {
                                 <a href='#' className="pic">
 
                                     <div className="pic__holder">
-                                        <img src="https://mist.lagosstate.gov.ng/wp-content/uploads/sites/54/2022/04/197493BE-39AE-49A6-81D1-2FC7F078989D-767x1024.jpeg" alt="" />
+                                        <img src={idris} alt="" />
                                     </div>
 
                                     <div className="name__card">
-                                        <span>HEAD ,PROCUREMENT UNIT</span>
-                                        <p>MRS. IDRIS AMINA IKEOLUWA</p>
+                                        <span>HEAD, PROCUREMENT UNIT</span>
+                                        <p>Mrs. Idris Amina Ikeoluwa</p>
                                     </div>
 
                                 </a>
@@ -508,6 +519,8 @@ export default function About() {
             </Container>
 
         </div>
+
+        <Footer/>
 
     </div>
   )
