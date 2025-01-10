@@ -29,8 +29,6 @@ export default function Home() {
   return (
     <div className="home">
 
-        {/* <RrsNews/> */}
-
         <Container>
 
             <div className="landing__area">

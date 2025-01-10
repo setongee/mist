@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import './footer.scss'
-import { ArrowUpRight, FacebookTag, Instagram, Linkedin, Mail, MapPin, Phone, X, Youtube } from 'iconoir-react'
+import { ArrowUpRight, Facebook, FacebookTag, Instagram, Linkedin, Mail, MapPin, Phone, X, Youtube } from 'iconoir-react'
 import Container from '../container/Container'
 
 export default function Footer() {
@@ -38,10 +38,10 @@ export default function Footer() {
 
                 <div className="socialsIcon flex">
 
-                  <a target = '_blank' href='https://www.instagram.com/lagosstategovt/?hl=en' className="icon"><Instagram width={22} strokeWidth={1.6}/></a> 
-                  <a target = '_blank' href = 'https://x.com/followlasg' className="icon"><X width={22} strokeWidth={1.6}/></a>
-                  <a target = '_blank' href='https://web.facebook.com/followlasg' className="icon"><FacebookTag width={22} strokeWidth={1.6}/></a>
-                  <a target = '_blank' href='https://www.linkedin.com/company/lagosstategovernment/?originalSubdomain=ng' className="icon"><Linkedin width={22} strokeWidth={1.6}/></a> 
+                  <a href="https://www.instagram.com/lasgmist/" target='_Blank' ><Instagram/></a>
+                  <a href="https://x.com/lasgmist" target='_Blank'><X/></a>
+                  <a href="https://web.facebook.com/lasgmist/?_rdc=1&_rdr#" target='_Blank' ><Facebook/></a>
+                  <a href="https://www.linkedin.com/company/lasgmist/posts/?feedView=all" target='_Blank' ><Linkedin/></a>
 
                 </div>
 
@@ -59,15 +59,15 @@ export default function Footer() {
 
                             <div className="icon"> <MapPin/> </div> 
 
-                            Block 4, The Lagos State Government Secretariat Complex, Alausa, Ikeja, Lagos. P.M.B. 21007, Ikeja 
+                            Block 25, The Lagos State Government Secretariat Complex, Alausa, Ikeja, Lagos. P.M.B. 21007, Ikeja 
 
                         </a>
 
-                        <a href = 'mailto:health@lagosstate.gov.ng' target='_Blank' className='flex font__14 gap__15 dark'> 
+                        <a href = 'mailto:mist@lagosstate.gov.ng' target='_Blank' className='flex font__14 gap__15 dark'> 
 
                             <div className="icon"> <Mail/> </div> 
 
-                            health@lagosstate.gov.ng
+                            mist@lagosstate.gov.ng
                             
                         </a>
 
