@@ -23,7 +23,7 @@ export default function App() {
     // Root Component for the Application
     <div className="mda__app">
 
-      <div className='fixed headpart'>
+      <div className='fixed headpart' id={`header___${path}`} >
         <Rrs/>
         <Header/>
       </div>

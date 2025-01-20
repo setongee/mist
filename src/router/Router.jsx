@@ -11,6 +11,9 @@ import People from '../pages/about/people';
 import News_Events from '../pages/news_events/News_Events';
 import News_view from '../pages/news_events/news_view';
 import Connect from '../pages/connect/connect';
+import Authy from '../admin/authy';
+import Dashboard from '../admin/dashboard';
+import { h1 } from 'motion/react-client';
 
   const router = createBrowserRouter([
     {
@@ -52,6 +55,16 @@ import Connect from '../pages/connect/connect';
             }
           ]
         },
+        {
+          path : "admin",
+          children : [
+            {
+              path : ":page",
+              element : <Authy/>
+            }
+          ]
+        }
+
       ]
     }
   ]);

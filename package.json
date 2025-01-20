@@ -16,6 +16,8 @@
     "express": "^4.21.2",
     "iconoir-react": "^7.8.0",
     "motion": "^11.13.5",
+    "primereact": "^10.9.1",
+    "quill": "^2.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.1",
