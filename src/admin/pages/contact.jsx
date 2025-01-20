@@ -50,8 +50,7 @@ const Contact = ({inData}) => {
   useEffect(() => {
   
       setData(inData);
-      setContact(data.contact);
-      
+      setContact(inData.contact);
   
     }, [inData]);
 
