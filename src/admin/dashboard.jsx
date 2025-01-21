@@ -4,7 +4,7 @@ import Heading from './heading/Heading'
 
 import './dashboard.scss'
 import Vision from './pages/vision'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Agency from './pages/agencies'
 import { getAdminData } from '../api/core/admin'
 import Responsibilities from './pages/responsibilities'
@@ -14,6 +14,7 @@ import Contact from './pages/contact'
 const Dashboard = () => {
 
   let { page } = useParams();
+  let navigate = useNavigate();
 
   const[data, setData] = useState({})
 
@@ -21,6 +22,10 @@ const Dashboard = () => {
     
     getAdminData("mist")
     .then( res => setData(res[0]) )
+
+    if (page === undefined){
+      navigate("/admin/vision")
+    }
 
   }, []);
 

@@ -59,6 +59,10 @@ import { h1 } from 'motion/react-client';
           path : "admin",
           children : [
             {
+              path : "",
+              element : <Authy/>
+            },
+            {
               path : ":page",
               element : <Authy/>
             }
