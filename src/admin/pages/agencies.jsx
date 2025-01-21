@@ -108,6 +108,21 @@ const Agency = ({inData}) => {
 
   }
 
+    // delete an item
+    const deleteItem = (index) => {
+
+      const shouldDelete = confirm(`Do you want to delete ${data.agencies[index].name}`)
+    
+      if (shouldDelete) {
+        
+        const filterOpt = data.agencies.filter( (e, idx) =>  index !== idx  );
+        data.agencies = filterOpt;
+        updateData();
+    
+      }
+    
+    }
+
   return (
 
     <div className="table__main__body">
@@ -246,7 +261,7 @@ const Agency = ({inData}) => {
                 <div className="tr__item flex act--item"> 
 
                   <div className="action" onClick={ () => openEditModal(index) } > <Edit/> </div>
-                  <div className="action"> <Trash/> </div> 
+                  <div className="action" onClick={ () => deleteItem(index) } > <Trash/> </div> 
 
                 </div>
 

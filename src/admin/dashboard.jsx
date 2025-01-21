@@ -24,7 +24,7 @@ const Dashboard = () => {
     .then( res => setData(res[0]) )
 
     if (page === undefined){
-      navigate("/admin/vision")
+      navigate("/admin/vision");
     }
 
   }, []);
