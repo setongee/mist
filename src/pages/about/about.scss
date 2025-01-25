@@ -165,22 +165,18 @@
                 font-weight: 500;
             }
 
-            .body__list{
+            .mda__content{
 
-                margin-top: 40px;
+                font-size: 17px;
+                display: flex;
+                flex-direction: column;
+                line-height: 30px;
+                font-weight: 500;
 
                 ol{
-
                     display: flex;
                     flex-direction: column;
                     gap: 15px;
-                    width: 80%;
-                    margin-left: 0px;
-
-                    li{
-                        list-style-type : none;
-                        line-height: 26px;
-                    }
                 }
             }
 

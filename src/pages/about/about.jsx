@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import Container from '../../components/container/Container'
 import './about.scss'
 import ScrollSpy from "react-ui-scrollspy";
@@ -21,8 +21,55 @@ import tunji from '../../assets/people/tunji.jpeg'
 import yinka from '../../assets/people/SORUNGBE-TIWALADE-ADEYINKA.jpg'
 import idris from '../../assets/people/idris.jpeg'
 import Footer from '../../components/footer/footerArea';
+import { getAdminData } from '../../api/core/admin';
+import { convertToTitleCase } from '../../middleware/middleware';
 
 export default function About() {
+
+const[data, setData] = useState({})
+const[agencies, setAgencies] = useState([]);
+
+  useEffect(() => {
+
+    getAdminData("mist")
+    .then( res => {
+        setData(res[0]);
+        refixArr(res[0].agencies);
+        addContent(res[0].responsibilities);
+    } )
+
+  }, []);
+
+const refixArr = (q) => {
+
+    const newObj = {};
+
+    q.forEach(e => {
+        
+        if(!newObj[e.category]){
+
+            newObj[e.category] = { name : e.category, data : [] }
+
+        }
+
+        newObj[e.category].data.push(e)
+
+    });
+
+    setAgencies(newObj);
+
+} 
+
+const addContent = (response) => {
+    
+    const content = document.getElementById('content');
+    content.innerHTML = response;
+
+}
+
+
+  console.log(data)
+
   return (
     <div className="about">
 
@@ -75,7 +122,7 @@ export default function About() {
 
                             <div className="headUp">Vision Statement</div>
 
-                            <p className='tube'>To be the best public sector financial service provider and a citadel for financial professionals. </p>
+                            <p className='tube'> {data?.vision} </p>
 
                         </div>
 
@@ -83,7 +130,7 @@ export default function About() {
 
                             <div className="headUp">Mission Statement</div>
 
-                            <p>To provide world class financial services to the stakeholders through IT driven processes with seasoned professionals working in a conducive environment. </p>
+                            <p> {data?.mission} </p>
 
                         </div>
 
@@ -91,277 +138,45 @@ export default function About() {
 
                     <div id="agency">
 
-                        <div className="titlePin">
-                            Explore Agencies, Departments and Units in this Ministry
-                        </div>
+                    {
+                        Object.entries(agencies)?.map( (e, index) => (
 
-                        <section id="directorates" className = "multi" >
+                            <section id={ e[0] === "department" ? "directorates" : e[0] } className = "multi" key = {index}>
 
-                            <h1>Agencies</h1>
+                                <h1> {e[0]} </h1>
 
-                            <div className="mda__card__ui flex gap__20">
+                                <div className="mda__card__ui flex gap__20">
 
-                                <div className="mda__card">
+                                    {
+                                        e[1].data.map( (res, index) => (
 
-                                    <div className="iconHolder">
+                                            <div className="mda__card" key = {index}>
 
-                                        <div className="card__photo">
-                                            <img src = {units} />
-                                        </div>
+                                                <div className="iconHolder">
 
-                                    </div>
+                                                    <div className="card__photo">
+                                                        <img src = {dept} />
+                                                    </div>
 
-                                    <div className="card__content">
-                                        <p> Lagos State Science Research and Innovation Council (LASRIC) </p>
-                                        <span> <Cellar/> Agency</span>
-                                    </div>
+                                                </div>
 
-                                </div>
+                                                <div className="card__content">
 
-                                <div className="mda__card">
+                                                <p>{res.name}</p>
+                                                <span> <Cellar/> {e[0]} </span>
+                                                    
+                                                </div>
 
-                                    <div className="iconHolder">
-
-                                        <div className="card__photo">
-                                            <img src = {units} />
-                                        </div>
-
-                                    </div>
-
-                                    <div className="card__content">
-                                        <p> Cyber Security Advisory Council </p>
-                                        <span> <Cellar/> Agency </span>
-                                    </div>
+                                            </div>
+                                        ) )
+                                    }
 
                                 </div>
 
-                                <div className="mda__card">
+                            </section>
 
-                                    <div className="iconHolder">
-
-                                        <div className="card__photo">
-                                            <img src = {units} />
-                                        </div>
-
-                                    </div>
-
-                                    <div className="card__content">
-                                        <p> Lagos State Residents Registration Agency (LASRRA) </p>
-                                        <span> <Cellar/> Agency</span>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </section>
-
-                        <section id="directorates" className = "multi" >
-
-                            <h1>Departments</h1>
-
-                            <div className="mda__card__ui flex gap__20">
-
-                                <div className="mda__card">
-
-                                    <div className="iconHolder">
-
-                                        <div className="card__photo">
-                                            <img src = {dept} />
-                                        </div>
-
-                                    </div>
-
-                                    <div className="card__content">
-                                        <p>Administration and Human Resources [A & HR]</p>
-                                        <span> <Cellar/> Departments</span>
-                                    </div>
-
-                                </div>
-
-                                <div className="mda__card">
-
-                                    <div className="iconHolder">
-
-                                        <div className="card__photo">
-                                            <img src = {dept} />
-                                        </div>
-
-                                    </div>
-
-                                    <div className="card__content">
-                                    <p>Finance and {<br></br>} Accounts [F & A]</p>
-                                    <span> <Cellar/> Directorates</span>
-                                    </div>
-
-                                </div>
-
-                                <div className="mda__card">
-
-                                    <div className="iconHolder">
-
-                                        <div className="card__photo">
-                                            <img src = {dept} />
-                                        </div>
-
-                                    </div>
-
-                                    <div className="card__content">
-                                    <p> Information Communication Technology[ICT]</p>
-                                    <span> <Cellar/> Directorates</span>
-                                    </div>
-
-                                </div>
-
-                                <div className="mda__card">
-
-                                    <div className="iconHolder">
-
-                                        <div className="card__photo">
-                                            <img src = {dept} />
-                                        </div>
-
-                                    </div>
-
-                                    <div className="card__content">
-                                    <p>Science, Policy, Programmes and Promotion[SPPP]</p>
-                                    <span> <Cellar/> Directorates</span>
-                                    </div>
-
-                                </div>
-
-                                <div className="mda__card">
-
-                                    <div className="iconHolder">
-
-                                        <div className="card__photo">
-                                            <img src = {dept} />
-                                        </div>
-
-                                    </div>
-
-                                    <div className="card__content">
-                                    <p>Computer Services [CS]</p>
-                                    <span> <Cellar/> Directorates</span>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </section>
-
-                        <section id="units" className = "multi" >
-
-                            <h1>Units</h1>
-
-                            <div className="mda__card__ui flex gap__20">
-
-                                <div className="mda__card">
-
-                                    <div className="iconHolder">
-
-                                        <div className="card__photo">
-                                            <img src = {agency} />
-                                        </div>
-
-                                    </div>
-
-                                    <div className="card__content">
-                                    <p>Public Affairs</p>
-                                    <span> <City/> Units</span>
-                                    </div>
-
-                                </div>
-
-                                <div className="mda__card">
-
-                                    <div className="iconHolder">
-
-                                        <div className="card__photo">
-                                            <img src = {agency} />
-                                        </div>
-
-                                    </div>
-
-                                    <div className="card__content">
-                                    <p>The Internal Audit</p>
-                                    <span> <City/> Units</span>
-                                    </div>
-
-                                </div>
-
-                                <div className="mda__card">
-
-                                    <div className="iconHolder">
-
-                                        <div className="card__photo">
-                                            <img src = {agency} />
-                                        </div>
-
-                                    </div>
-
-                                    <div className="card__content">
-                                    <p>Planning</p>
-                                    <span> <City/> Units</span>
-                                    </div>
-
-                                </div>
-
-                                <div className="mda__card">
-
-                                    <div className="iconHolder">
-
-                                        <div className="card__photo">
-                                            <img src = {agency} />
-                                        </div>
-
-                                    </div>
-
-                                    <div className="card__content">
-                                    <p>Procurement</p>
-                                    <span> <City/> Units</span>
-                                    </div>
-
-                                </div>
-
-                                <div className="mda__card">
-
-                                    <div className="iconHolder">
-
-                                        <div className="card__photo">
-                                            <img src = {agency} />
-                                        </div>
-
-                                    </div>
-
-                                    <div className="card__content">
-                                    <p>Engineering</p>
-                                    <span> <City/> Units</span>
-                                    </div>
-
-                                </div>
-
-                                <div className="mda__card">
-
-                                    <div className="iconHolder">
-
-                                        <div className="card__photo">
-                                            <img src = {agency} />
-                                        </div>
-
-                                    </div>
-
-                                    <div className="card__content">
-                                    <p>Legal</p>
-                                    <span> <City/> Units</span>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </section>
+                        ) )
+                    }
                         
                     </div>
 
@@ -373,21 +188,7 @@ export default function About() {
 
                         <div className="resp__body">
 
-                            <div className="summary">The Statutory responsibilities of the Ministry of Innovation, science and Technology include the following major services amongst others: </div>
-
-                            <div className="body__list">
-
-                                <ol>
-                                    <li> 01. Initiate, formulate, execute, monitor and evaluate policies relating to Science & Information Communication Technology (ICT).</li>
-                                    <li>02. Automation and reengineering of government business processes & harmonisation of all existing ICT assets into a world class infrastructure.</li>
-                                    <li>03. Provision and maintenance of ICT services across Ministries, Departments &Agencies (MDAs).</li>
-                                    <li>04. Development of Science, Technology, Engineering & Mathematics (STEM) education as well as setting up ICT Centre for state schools.</li>
-                                    <li>05. STEM & ICT capacity building across all MDAs.</li>
-                                    <li>06. Enlarging the pool of scientific manpower, attracting young people to careers in science and retaining same.</li>
-                                    <li>07. Establishing globally competitive research facilities for the promotion of innovation, research & development in Science & ICT..</li>
-                                </ol>
-
-                            </div>
+                            <div className="mda__content" id='content'></div>
 
                         </div>
 
@@ -403,110 +204,24 @@ export default function About() {
 
                             <section>
 
-                                <a href='#' className="pic">
+                                {
+                                    data?.people?.length ? data.people.map( (res, index) => (
 
-                                    <div className="pic__holder">
-                                        <img src={tunbosun} alt="" />
-                                    </div>
+                                        <a className="pic" key = {index} >
 
-                                    <div className="name__card">
-                                        <span>Honourable Commissioner</span>
-                                        <p>Mr. Tunbosun Alake </p>
-                                    </div>
+                                            <div className="pic__holder">
+                                                <img src={res.photo} alt= { `${res.name}_${res.role}` } />
+                                            </div>
 
-                                </a>
+                                            <div className="name__card">
+                                                <span> {res.role} </span>
+                                                <p> { convertToTitleCase( res.name ) } </p>
+                                            </div>
 
-                                <a href='#' className="pic">
+                                        </a>
 
-                                    <div className="pic__holder">
-                                        <img src={ibilola} alt="" />
-                                    </div>
-
-                                    <div className="name__card">
-                                        <span> PERMANENT SECRETARY
-                                        </span>
-                                        <p>Engr (Mrs) Ibilola Olufolake Kasunmu</p>
-                                    </div>
-
-                                </a>
-
-                                <a href='#' className="pic">
-
-                                    <div className="pic__holder">
-                                        <img src={adewoju} alt="" />
-                                    </div>
-
-                                    <div className="name__card">
-                                        <span> Director, Finance& Accounts</span>
-                                        <p>Adewoju Olusola Olayinka (Mrs)</p>
-                                    </div>
-
-                                </a>
-
-                                <a href='#' className="pic">
-
-                                    <div className="pic__holder">
-                                        <img src={faderera} alt="" />
-                                    </div>
-
-                                    <div className="name__card">
-                                        <span>HEAD, SERVICE DELIVERY </span>
-                                        <p>Mrs. Faderera Ajibola Lekan-Rotimi </p>
-                                    </div>
-
-                                </a>
-
-                                <a href='#' className="pic">
-
-                                    <div className="pic__holder">
-                                        <img src={gbemi} alt="" />
-                                    </div>
-
-                                    <div className="name__card">
-                                        <span>HEAD,STRATEGY & GOVERNANCE DEPARTMENT</span>
-                                        <p>Mrs. Gbemisola Kayode Bolarinwa</p>
-                                    </div>
-
-                                </a>
-
-                                <a href='#' className="pic">
-
-                                    <div className="pic__holder">
-                                        <img src={tunji} alt="" />
-                                    </div>
-
-                                    <div className="name__card">
-                                        <span>Director Science Policy, Programme and Promotion</span>
-                                        <p>Adetunji Oluwaseyi Adebayo</p>
-                                    </div>
-
-                                </a>
-
-                                <a href='#' className="pic">
-
-                                    <div className="pic__holder">
-                                        <img src={yinka} alt="" />
-                                    </div>
-
-                                    <div className="name__card">
-                                        <span> Director Infrastructure </span>
-                                        <p>Mr. Sorungbe Tiwalade Adeyinka</p>
-                                    </div>
-
-                                </a>
-
-                                <a href='#' className="pic">
-
-                                    <div className="pic__holder">
-                                        <img src={idris} alt="" />
-                                    </div>
-
-                                    <div className="name__card">
-                                        <span>HEAD, PROCUREMENT UNIT</span>
-                                        <p>Mrs. Idris Amina Ikeoluwa</p>
-                                    </div>
-
-                                </a>
+                                    ) ) : null
+                                }
 
                             </section>
 
