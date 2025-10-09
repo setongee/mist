@@ -12,14 +12,6 @@ import dept from '../../assets/MDA/department.svg'
 import units from '../../assets/MDA/ministry.svg'
 
 //people
-import tunbosun from '../../assets/people/council_Olatubosun_Alake (1).png'
-import ibilola from '../../assets/people/ibilola.jpeg'
-import adewoju from '../../assets/people/ADEWOJU OLUSOLA OLAYINKA.jpeg'
-import faderera from '../../assets/people/mrs-lekan-rotimi.png'
-import gbemi from '../../assets/people/mrs-Bolarinwa.png'
-import tunji from '../../assets/people/tunji.jpeg'
-import yinka from '../../assets/people/SORUNGBE-TIWALADE-ADEYINKA.jpg'
-import idris from '../../assets/people/idris.jpeg'
 import Footer from '../../components/footer/footerArea';
 import { getAdminData } from '../../api/core/admin';
 import { convertToTitleCase } from '../../middleware/middleware';
